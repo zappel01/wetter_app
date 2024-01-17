@@ -34,7 +34,7 @@ class _SplashState extends State<Splash> {
       weatherList = weatherList;
     });
     Timer(
-        const Duration(seconds: 4),
+        const Duration(seconds: 3),
         (() => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -68,7 +68,7 @@ class _SplashState extends State<Splash> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        'Creat by App Junkies',
+                        'Creat by Sven Ziurawski',
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.white,

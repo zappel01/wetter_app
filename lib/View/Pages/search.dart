@@ -72,6 +72,7 @@ class _SearchState extends State<Search> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: myWidth * 0.05),
                             child: TextFormField(
+                              cursorColor: Colors.white,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   icon: Image.asset(

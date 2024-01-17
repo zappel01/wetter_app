@@ -1,9 +1,9 @@
 [
     {
-        "name": "Paris",
+        "name": "Stuttgart",
         "weekly_weather": [
             {
-                "main_temp": "9°C",
+                "main_temp": "-4°C",
                 "main_wind": "18 km/h",
                 "main_humidity": "85%",
                 "main_img": "assets/img/5.png",
@@ -166,7 +166,7 @@
         ]
     },
     {
-        "name": "London",
+        "name": "Leinzell",
         "weekly_weather": [
             {
                 "main_temp": "10°C",
@@ -332,7 +332,7 @@
         ]
     },
     {
-        "name": "Milan",
+        "name": "Göggingen",
         "weekly_weather": [
             {
                 "main_temp": "10°C",
@@ -498,7 +498,7 @@
         ]
     },
     {
-        "name": "Reykjavík",
+        "name": "Schechingen",
         "weekly_weather": [
             {
                 "main_temp": "-3°C",
@@ -664,7 +664,7 @@
         ]
     },
     {
-        "name": "Washington, DC",
+        "name": "Heubach",
         "weekly_weather": [
             {
                 "main_temp": "4°C",
@@ -830,7 +830,7 @@
         ]
     },
     {
-        "name": "Kurdistan",
+        "name": "Mutlangen",
         "weekly_weather": [
             {
                 "main_temp": "-3°C",
