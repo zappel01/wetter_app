@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:weather/Model/weatherModel.dart';
+// import 'package:weather/Model/weatherModel.dart';
 import 'package:weather/Model/weather_data.dart';
 import 'package:weather/View/Pages/bottomNavigationBar.dart';
 
@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
   }
 
   List data = [];
-  List<WeatherModel> weatherList = [];
+  List<WeatherDataCurrent> weatherList = [];
 
   loadJson() async {
     const url =
@@ -46,7 +46,8 @@ class _SplashState extends State<Splash> {
             context,
             MaterialPageRoute(
                 builder: ((context) => NavBar(
-                      weatherModel: weatherList,
+                      weatherData: weatherList,
+                      weatherModel: const [],
                     ))))));
   }
 

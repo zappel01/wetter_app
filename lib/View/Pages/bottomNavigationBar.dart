@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/Model/weatherModel.dart';
+import 'package:weather/Model/weather_data.dart';
 import 'package:weather/View/Pages/forecast.dart';
 import 'package:weather/View/Pages/home.dart';
 import 'package:weather/View/Pages/search.dart';
@@ -8,7 +9,10 @@ import 'package:weather/View/Pages/setting.dart';
 class NavBar extends StatefulWidget {
   List<WeatherModel> weatherModel = [];
 
-  NavBar({required this.weatherModel});
+  NavBar(
+      {super.key,
+      required this.weatherModel,
+      required List<WeatherDataCurrent> weatherData});
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -25,7 +29,7 @@ class _NavBarState extends State<NavBar> {
       Home(weatherModel: widget.weatherModel),
       Search(weatherModel: widget.weatherModel),
       Forecast(weatherModel: widget.weatherModel),
-      Setting(),
+      const Setting(),
     ];
     super.initState();
   }
@@ -36,10 +40,10 @@ class _NavBarState extends State<NavBar> {
     double myWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff060720),
+        backgroundColor: const Color(0xff060720),
         body: pages.elementAt(_currentIndex),
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color(0xff060720),
+            backgroundColor: const Color(0xff060720),
             currentIndex: _currentIndex,
             showSelectedLabels: false,
             showUnselectedLabels: false,
