@@ -2,8 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart';
 import 'package:weather/Model/weatherModel.dart';
+import 'package:weather/Model/weather_data.dart';
 import 'package:weather/View/Pages/bottomNavigationBar.dart';
 
 class Splash extends StatefulWidget {
@@ -26,13 +27,19 @@ class _SplashState extends State<Splash> {
   List<WeatherModel> weatherList = [];
 
   loadJson() async {
-    String myData = await rootBundle.loadString('assets/myJson/file.json');
+    const url =
+        "https://api.open-meteo.com/v1/dwd-icon?latitude=48.8734&longitude=9.9174&hourly=temperature_2m,relative_humidity_2m,precipitation,snowfall,wind_direction_10m,is_day&timezone=Europe%2FBerlin&forecast_hours=24";
 
-    setState(() {
-      data = json.decode(myData);
-      weatherList = data.map((e) => WeatherModel.fromJson(e)).toList();
-      weatherList = weatherList;
-    });
+    Future<WeatherData?> parseData() async {
+      try {
+        final response = await get(Uri.parse(url));
+        return WeatherData.fromMap(json.decode(response.body));
+      } catch (e) {
+        print("[JSON-Parse-Exception]: Weather Data could not be parsed: $e");
+      }
+      return null;
+    }
+
     Timer(
         const Duration(seconds: 3),
         (() => Navigator.pushReplacement(
